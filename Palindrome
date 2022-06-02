@@ -1,0 +1,14 @@
+def palindrom(a,b):
+    if a>0:
+        b*=10
+        b+=(a%10)
+        return palindrom(a//10,b)
+    else:
+        return b
+    
+a=int(input())
+b=int(0)
+if a==palindrom(a,b):
+    print("No. is plaindrome")
+else:
+    print("No. is not palindrome")
