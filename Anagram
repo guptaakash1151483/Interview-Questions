@@ -1,0 +1,15 @@
+a=input()
+b=input()
+k=0
+for i in a:
+    if (i in b):
+        j=b.find(i)
+        b=b[0:j]+b[j+1:]
+        k+=1
+    else:
+        k=0
+        break
+if k>0 and len(b)==0:
+    print("Given strings are anagram")
+else:
+    print("Strings are not anagram")
