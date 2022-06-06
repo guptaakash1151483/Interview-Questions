@@ -1,0 +1,28 @@
+def mergesort(l):
+    n=len(l)
+    if (n==1):
+        return l
+    else:
+        a=mergesort(l[0:n//2])
+        b=mergesort(l[n//2:])
+    i=0
+    j=0
+    l1=[]
+    while i<len(a) and j<len(b):
+        if a[i]<b[j]:
+            l1.append(a[i])
+            i+=1
+        else:
+            l1.append(b[j])
+            j+=1
+    while i<len(a) or j<len(b):
+        if i<len(a):
+            l1.append(a[i])
+            i+=1
+        else:
+            l1.append(b[j])
+            j+=1
+    return l1
+
+l=list(map(int,input().split()))
+print(mergesort(l))
