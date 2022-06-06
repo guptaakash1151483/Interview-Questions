@@ -1,0 +1,19 @@
+def quicksort(l):
+        left=[]
+        right=[]
+        p=l[0]
+        for i in l[1:]:
+            if i<p:
+                left.append(i)
+            else:
+                right.append(i)
+        if (len(left)>1):
+            left=quicksort(left)
+        if (len(right)>1):
+            right=quicksort(right)
+        l1=left+[p]+right
+        return l1
+
+
+l=list(map(int,input().split()))
+print(quicksort(l))
